@@ -36,7 +36,7 @@ $.fn.stick_in_parent = (opts={}) ->
 
       w = parseFloat(computed.getPropertyValue("width")) + parseFloat(computed.getPropertyValue("margin-left")) + parseFloat(computed.getPropertyValue("margin-right"))
 
-      if computed.getPropertyValue("box-sizing") == "border-box"
+      if computed.getPropertyValue("box-sizing") != "border-box" || computed.getPropertyValue("boxSizing") === "border-box"
         w += parseFloat(computed.getPropertyValue("border-left-width")) + parseFloat(computed.getPropertyValue("border-right-width")) + parseFloat(computed.getPropertyValue("padding-left")) + parseFloat(computed.getPropertyValue("padding-right"))
       w
     else
